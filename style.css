@@ -417,6 +417,9 @@ a {
 		text-align:center;
 		
 	}
+	.cover-slider > .inner > ul > li .summary {
+		font-size: 1em;
+	}
 	.cover-slider > .inner > ul > li .index {
 		left: 49%;
 		bottom: 10px;
