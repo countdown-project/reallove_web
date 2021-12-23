@@ -215,7 +215,7 @@ a {
 	width: 100%;
 	height: 100%;
 	text-align: center;
-	background-position: 50% 50%;
+	/* background-position: 50% 50%; */
 	background-size: cover;
 }
 .cover-slider > .inner > ul > li > div {
