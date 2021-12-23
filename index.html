@@ -51,24 +51,10 @@
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/epiksel/countdown/jquery.countdown.min.js"></script>
 <script src="./script.js"></script>
-<script src="https://uicdn.toast.com/tui-app-loader/latest/tui-app-loader.js"></script>
 	
 <script>
 	function goMV() {
-		var AppLoader = require('tui-app-loader'); /* CommonJS */
-		ios: {
-		    scheme: 'universe://',
-		    url: 'https://apps.apple.com/kr/app/id1515427473', // app store url
-		},
-		android: {
-		    intentURI: 'intent://#Intent;scheme=universe;S.browser_fallback_url=https://play.google.com/store/apps/details?id=com.ncsoft.universeapp;package=com.ncsoft.universeapp;end'
-		},
-		notFoundCallback: function(storeUrl) {
-		    alert('MV는 유니버스 앱에서 확인 가능합니다. 유니버스 앱을 설치하세요.');
-		},
-		etcCallback: function() {
-		    alert('MV는 유니버스 앱에서 확인 가능합니다.');
-		}
+		alert('MV는 유니버스 앱에서 확인 가능합니다.');
 	}
 	
 </script>
