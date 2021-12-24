@@ -175,7 +175,7 @@
                     
                     if(dt_countdown.getTime() < date.getTime()){
                         //alert('앨범이 발매되었습니다!');
-                        $($countdown_obj).append('<ul id="countdown" class="item"><h1 style="font-size: 2em;">앨범이 발매되었습니다! 위 유튜브 링크를 눌러 MV를 확인하세요!</h1>')
+                        $($countdown_obj).append('<ul id="countdown" class="item"><h1 style="font-size: 1em;">앨범이 발매되었습니다! 위 링크를 눌러 MV를 확인하세요!</h1>')
                     } else {
 
                         if(countdown_language == 'english'){
