@@ -28,10 +28,10 @@
 	var dt_temp = new Date(date.getTime() - (date.getTimezoneOffset() * 60000));
 	var dt_nextweek = new Date(dt_temp.setDate(dt_temp.getDate()+7));
 
-	if(isNaN(dt_countdown.getTime())){
+	/*if(isNaN(dt_countdown.getTime())){
 		alert('날짜 설정이 올바르지 않습니다. 7일후 날짜로 임시 설정됩니다.');
 		countdown = dt_nextweek.toISOString();
-	}
+	}*/
 
 	countdown = countdown.substring(5,7)+'/'+countdown.substring(8,10)+'/'+countdown.substring(0,4)+' '+countdown.substring(11,19);
 	var search_address = $('body').attr('search-address');
@@ -175,7 +175,7 @@
                     
                     if(dt_countdown.getTime() < date.getTime()){
                         //alert('앨범이 발매되었습니다!');
-                        $($countdown_obj).append('<ul id="countdown" class="item"><h1 style="font-size: 1em;">앨범이 발매되었습니다! 위 링크를 눌러 MV를 확인하세요!</h1>')
+                        $($countdown_obj).append('<ul id="countdown" class="item"><h1 style="font-size: 1.5em;">앨범이 발매되었습니다!<br>위 링크를 눌러 MV를 확인하세요!</h1>')
                     } else {
 
                         if(countdown_language == 'english'){
