@@ -60,6 +60,32 @@
       </div>
     </div> -->
 
+    <input type="checkbox" id="mv-modal" class="modal-toggle"> 
+    <div class="modal">
+      <div class="modal-box">
+        <h2 class="text-2xl font-bold card-title">MV 시청 안내</h2>
+        <p style="white-space: pre-line;">MV는 유니버스 앱에서 확인 가능합니다.
+            확인을 누르면 앱이 실행됩니다.
+        </p> 
+        <div class="modal-action">
+          <label for="mv-modal" class="btn btn-primary" onclick="window.open('https://t.co/ve0CLhnjBG');">확인</label> 
+        </div>
+      </div>
+    </div>
+
+    <input type="checkbox" id="mv-modal-pc" class="modal-toggle"> 
+    <div class="modal">
+      <div class="modal-box">
+        <h2 class="text-2xl font-bold card-title">MV 시청 안내</h2>
+        <p style="white-space: pre-line;">MV는 유니버스 앱에서 확인 가능합니다.
+            모바일 앱스토어에서 "유니버스" 검색 후 설치해 주세요.
+        </p> 
+        <div class="modal-action">
+          <label for="mv-modal-pc" class="btn btn-primary">확인</label> 
+        </div>
+      </div>
+    </div>
+
     <script>
 
       function setCookie(name, value, exp) {
@@ -87,6 +113,20 @@
           document.body.querySelector("#notice-modal").checked = true;
         } */
         void(0);
+      }
+      
+      function MVModal() {
+
+            var varUA = navigator.userAgent.toLowerCase(); //userAgent 값 얻기
+
+            if ( varUA.indexOf('android') > -1 || varUA.indexOf("iphone") > -1 || varUA.indexOf("ipad") > -1 || varUA.indexOf("ipod") > -1 ) {
+                // 아이폰, 안드로이드
+                document.body.querySelector("#mv-modal").checked = true;
+            } else {
+                // 아이폰, 안드로이드 외
+                document.body.querySelector("#mv-modal-pc").checked = true;
+            }
+        
       }
 
     </script>

@@ -57,18 +57,7 @@
 	
 <script>
 	function goMV() {
- 
-		    var varUA = navigator.userAgent.toLowerCase(); //userAgent 값 얻기
-
-		    if ( varUA.indexOf('android') > -1 || varUA.indexOf("iphone") > -1||varUA.indexOf("ipad") > -1||varUA.indexOf("ipod") > -1 ) {
-				// 아이폰, 안드로이드
-				alert('MV는 유니버스 앱에서 확인 가능합니다. 확인을 누르면 앱이 실행됩니다.');
-				window.open('https://t.co/ve0CLhnjBG');
-		    } else {
-				// 아이폰, 안드로이드 외
-				alert('MV는 유니버스 앱에서 확인 가능합니다. 모바일 앱스토어에서 "유니버스" 검색 후 설치해 주세요.');
-		    }
-		
+		top.MVModal();
 	}
 
 	let audio = document.querySelector("#audio");
@@ -79,7 +68,7 @@
 		audio.style.width = 400 + 'px';
 
 		audio.contentWindow.document.body.style = "background-color: inherit;";
-		
+
 		audio.contentWindow.document.body.querySelector('video').style = "width: 100%;";
 		audio.contentWindow.document.body.querySelector('video').loop = true;
 		// audio.contentWindow.document.body.querySelector('video").controlsList = "nodownload";
