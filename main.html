@@ -1,0 +1,92 @@
+
+
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+    <title>Shark 앨범 카운트 다운</title>
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body
+    id="tt-body-index"
+    class="bgimg color-text-white" 
+	countdown-page="1"
+	countdown="2021-12-23 19:00:00" 
+	countdown-language="english" 
+>
+
+<div id="wrap">
+
+	<section class="container">
+
+		<article id="content">
+
+			<div class="inner">
+						
+                <div class="cover-slider">
+                    <div class="inner">
+                        <ul>
+                            
+                            <li style="background-image:url('./images/default.jpg');" >
+                                <div class="text-box">
+                                    <span class="title">Shark 앨범 발매 카운트 다운</span>
+                                    <span class="summary">2021년 12월 23일 오후 7시, 유니버스를 통해 발매 되었습니다!</span>
+
+                                    <iframe src="./shark.mp3" allow="autoplay" id="audio" style="border: 0; height: 10%;"></iframe><br/><br/>
+
+                                    <span class="summary"><a href="javascript:;" style="color: #ffffff; text-decoration: underline;" onclick="goMV();">MV 보러 가기</a></span>
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </div>		
+
+			</div>
+
+		</article>
+	</section>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/epiksel/countdown/jquery.countdown.min.js"></script>
+<script src="./script.js"></script>
+	
+<script>
+	function goMV() {
+ 
+		    var varUA = navigator.userAgent.toLowerCase(); //userAgent 값 얻기
+
+		    if ( varUA.indexOf('android') > -1 || varUA.indexOf("iphone") > -1||varUA.indexOf("ipad") > -1||varUA.indexOf("ipod") > -1 ) {
+				// 아이폰, 안드로이드
+				alert('MV는 유니버스 앱에서 확인 가능합니다. 확인을 누르면 앱이 실행됩니다.');
+				window.open('https://t.co/ve0CLhnjBG');
+		    } else {
+				// 아이폰, 안드로이드 외
+				alert('MV는 유니버스 앱에서 확인 가능합니다. 모바일 앱스토어에서 "유니버스" 검색 후 설치해 주세요.');
+		    }
+		
+	}
+
+	let audio = document.querySelector("#audio");
+
+	audio.addEventListener('load', function() { 
+
+		audio.style.height = 60 + 'px';
+		audio.style.width = 400 + 'px';
+
+		audio.contentWindow.document.body.style = "background-color: inherit;";
+		
+		audio.contentWindow.document.body.querySelector('video').style = "width: 100%;";
+		audio.contentWindow.document.body.querySelector('video').loop = true;
+		// audio.contentWindow.document.body.querySelector('video").controlsList = "nodownload";
+
+	});
+	
+</script>
+
+</body>
+</html>

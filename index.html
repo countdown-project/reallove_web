@@ -1,78 +1,65 @@
-
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shark 앨범 카운트 다운</title>
-    <link rel="stylesheet" href="./style.css">
-
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@1.19.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2/dist/tailwind.min.css" rel="stylesheet" type="text/css" />
+    <style>@import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');* { font-family: 'NanumSquare'; }</style>
 </head>
+<body style="margin: 0; padding: 0; overflow: hidden;">
+    <iframe id="page" src="main.html" style="width: 100vw; height: 100vh; border: 0px;"></iframe>
 
-<body
-    id="tt-body-index"
-    class="bgimg color-text-white" 
-	countdown-page="1"
-	countdown="2021-12-23 19:00:00" 
-	countdown-language="english" 
->
+    <input type="checkbox" id="info-modal" class="modal-toggle"> 
+    <div class="modal">
+      <div class="modal-box">
+        <h2 class="text-2xl font-bold card-title">BGM 삽입 안내</h2>
+        <p style="white-space: pre-line;">갑작스러운 BGM 재생으로 인해 놀라셨나요?
 
-<div id="wrap">
+            Shark 노래 발매 2일이 지나고,
+            드디어 이 웹사이트에 Shark 노래를 삽입했습니다!
 
-	<section class="container">
+            이 Shark 노래가 모두 끝나면 처음부터 다시 반복됩니다!
+            
+            노래가 나오는게 불편하시면,
+            전면에 있는 컨트롤러에서 노래를 중단해 주세요!
 
-		<article id="content">
+            * 만약 노래가 나오지 않으면,
+            컨트롤러에서 수동으로 노래를 재생해 주세요! (일부 브라우저의 제약)
 
-			<div class="inner">
-						
-                <div class="cover-slider">
-                    <div class="inner">
-                        <ul>
-                            
-                            <li style="background-image:url('./images/default.jpg');" >
-                                <div class="text-box">
-                                    <span class="title">Shark 앨범 발매 카운트 다운</span>
-                                    <span class="summary">2021년 12월 23일 오후 7시, 유니버스를 통해 발매 되었습니다!</span>
-                                    <span class="summary"><a href="javascript:;" style="color: #ffffff; text-decoration: underline;" onclick="goMV();">MV 보러 가기</a></span>
-                                </a>
-                            </li>
-                            
-                        </ul>
-                    </div>
-                </div>		
+            * 만약 노래가 다운로드 창만 나오고 나오지 않으면,
+            Chrome 브라우저에서 접속해 주세요. (일부 브라우저의 제약)
 
-			</div>
+            * 만약 컨트롤러가 이상하게 나오면,
+            Ctrl+Shift+F5(강제 새로고침)을 해주세요. (캐시가 쌓여 그런 것으로 추정)
+        </p> 
+        <div class="modal-action">
+          <label for="info-modal" class="btn btn-primary" onclick="setCookie('audio', 'true', 7);">닫기 (7일 동안 보이지 않습니다.)</label> 
+        </div>
+      </div>
+    </div>
 
-		</article>
-	</section>
-</div>
+    <script>
 
-<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/epiksel/countdown/jquery.countdown.min.js"></script>
-<script src="./script.js"></script>
-	
-<script>
-	function goMV() {
- 
-		    var varUA = navigator.userAgent.toLowerCase(); //userAgent 값 얻기
+      function setCookie(name, value, exp) {
+        var date = new Date();
+        date.setTime(date.getTime() + exp*24*60*60*1000);
+        document.cookie = name + '=' + value + ';expires=' + date.toUTCString() + ';path=/';
+      }
 
-		    if ( varUA.indexOf('android') > -1) {
-			//안드로이드
-			alert('MV는 유니버스 앱에서 확인 가능합니다. 확인을 누르면 앱이 실행됩니다.');
-			window.open('https://t.co/ve0CLhnjBG');
-		    } else if ( varUA.indexOf("iphone") > -1||varUA.indexOf("ipad") > -1||varUA.indexOf("ipod") > -1 ) {
-			//IOS
-			alert('MV는 유니버스 앱에서 확인 가능합니다. 확인을 누르면 앱이 실행됩니다.');
-			window.open('https://t.co/ve0CLhnjBG');
-		    } else {
-			//아이폰, 안드로이드 외
-			alert('MV는 유니버스 앱에서 확인 가능합니다. 모바일 앱스토어에서 "유니버스" 검색 후 설치해 주세요.');
-		    }
-		
-	}
-	
-</script>
+      function getCookie(name) {
+        var value = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
+        return value? value[2] : null;
+      }
 
+      window.addEventListener('load', function() {
+        if (getCookie('audio') != 'true') {
+          document.body.querySelector("#info-modal").checked = true;
+        }
+      })
+
+    </script>
 </body>
 </html>
