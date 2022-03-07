@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
-    <title>Shark 앨범 카운트 다운</title>
+    <title>Real Love 앨범 카운트 다운</title>
     <link rel="stylesheet" href="./style.css">
 
 </head>
@@ -14,7 +14,7 @@
     id="tt-body-index"
     class="bgimg color-text-white" 
 	countdown-page="1"
-	countdown="2021-12-23 19:00:00" 
+	countdown="2022-03-28 18:00:00" 
 	countdown-language="english" 
 >
 
@@ -32,12 +32,16 @@
                             
                             <li style="background-image:url('./images/default.jpg');" >
                                 <div class="text-box">
-                                    <span class="title">Shark 앨범 발매 카운트 다운</span>
-                                    <span class="summary">2021년 12월 23일 오후 7시, 유니버스를 통해 발매 되었습니다!</span>
+                                    <span class="title">Real Love 앨범 발매 카운트 다운</span>
+                                    <span class="summary">2022년 3월 28일 오후 6시, 정규 2집 "Real Love"가 발매됩니다!</span>
 
-                                    <iframe src="./shark.mp3" allow="autoplay" id="audio" style="border: 0; height: 10%;"></iframe><br/><br/>
+                                    <!--
+				    <audio id="audio" controls autoplay loop preload="auto" controlsList="nodownload">
+				        <source src="reallove.mp3" type="audio/mp3" />
+				    </audio><br/><br/>
+				    -->
 
-                                    <span class="summary"><a href="javascript:;" style="color: #ffffff; text-decoration: underline;" onclick="goMV();">MV 보러 가기</a></span>
+                                    <!--<span class="summary"><a href="javascript:;" style="color: #ffffff; text-decoration: underline;" onclick="goMV();">MV 보러 가기</a></span>-->
                                 </a>
                             </li>
                             
@@ -56,25 +60,11 @@
 <script src="./script.js"></script>
 	
 <script>
+	
 	function goMV() {
 		// top.MVModal();
-		window.open('https://www.youtube.com/watch?v=R78C57LXd2E');
+		window.open('https://youtu.be/');
 	}
-
-	let audio = document.querySelector("#audio");
-
-	audio.addEventListener('load', function() { 
-
-		audio.style.height = 60 + 'px';
-		audio.style.width = 400 + 'px';
-
-		audio.contentWindow.document.body.style = "background-color: inherit;";
-
-		audio.contentWindow.document.body.querySelector('video').style = "width: 100%;";
-		audio.contentWindow.document.body.querySelector('video').loop = true;
-		// audio.contentWindow.document.body.querySelector('video").controlsList = "nodownload";
-
-	});
 	
 	if (top.location.href == location.href) {
 		// Modal 로드 안됨!!
